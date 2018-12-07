@@ -88,7 +88,7 @@ namespace Text_Name_Search.Controllers
             {
                 var fullname = names.FirstName.ToString() + " " + names.MiddleName.ToString() + " " + names.LastName.ToString();
                 
-                while (((initialIndex = allArticle.IndexOf(fullname)) >= 0))
+                while (((initialIndex = allArticle.ToLower().IndexOf(fullname.ToLower())) >= 0))
                 {   
                     ++initialIndex;
                     ++nameOccurrences;
