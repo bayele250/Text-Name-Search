@@ -83,7 +83,7 @@ namespace Text_Name_Search.Controllers
 
             nameOccurrences = 0;
             initialIndex = 0;
-
+            //
             foreach (var names in allNames)
             {
                 var fullname = names.FirstName.ToString() + " " + names.MiddleName.ToString() + " " + names.LastName.ToString();
