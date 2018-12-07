@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Text_Name_Search.Models.Names>
+
+@{
+    ViewBag.Title = "ViewAll";
+    Layout = null;
+}
+
+<p>
+    @Html.ActionLink("Create New", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MiddleName)
+        </td>
+
+    </tr>
+}
+
+</table>
+
+<table>
+    @if (TempData["nameFound"] != null)
+    {
+        foreach(var item in(List<string>)TempData["nameFound"])
+        {
+            <tr>
+                <td>
+                    @item
+                </td>
+            </tr>
+        }
+    }
+
+</table>

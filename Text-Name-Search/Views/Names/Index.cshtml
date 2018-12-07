@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<ul class="nav nav-tabs">
+    <li>
+        <a data-toggle="tab" href="#nameTab"> Names To Search</a>
+    </li>
+    <li class="active">
+        <a data-toggle="tab" href="#nameSearchTab">Add Names</a>
+    </li>
+
+</ul>
+
+<div class="tab-content">
+    <div id="nameTab" class="tab-pane fade in">
+        @Html.Action("ViewAll")
+    </div>
+
+    <div id="nameSearchTab" class="tab-pane fade in active">
+        @Html.Action("AddName")
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    }
