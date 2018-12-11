@@ -15,8 +15,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    @*<span class="icon-bar"></span>*@
                 </button>
-                @Html.ActionLink("Name Search App", "Index", "Names", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Add Names", "Index", "Names", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Names List", "ViewAll", "Names", new { area = "" }, new { @class = "navbar-brand" })
+                @*@Html.ActionLink("Add Articles", "Index", "Search", new { area = "" }, new { @class = "navbar-brand" })*@
+                @Html.ActionLink("Names Occurance", "NamesOccured", "Search", new { area = "" }, new { @class = "navbar-brand" })
             </div>
 
         </div>

@@ -31,3 +31,23 @@ function refreshAddNewTab(resetUrl, showViewTab) {
         }
     });
 }
+
+function jQueryAjaxPostArticle(form) {
+    $.validator.unobtrusive.parse(form);
+    if ($(form).valid()) {
+        var ajaxConfig = {
+            type: "POST",
+            url: form.action,
+            data: new FormData(form),
+            success: function (response) {
+                alert("Article added");
+            }
+        }
+        if ($(form).attr("enctype") == "multiport/form-data") {
+            ajaxConfig["contentType"] = false;
+            ajaxConfig["processData"] = false;
+        }
+        $.ajax(ajaxConfig);
+    }
+    return false;
+}
